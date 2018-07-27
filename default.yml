@@ -583,7 +583,7 @@ Style/Lambda:
 Style/LineEndConcatenation:
   Description: Use \ instead of + or << to concatenate two string literals at line
     end.
-  Enabled: false
+  Enabled: true
 Style/MethodCallWithoutArgsParentheses:
   Description: Do not use parentheses for method calls with no arguments.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-args-no-parens
