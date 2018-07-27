@@ -1,39 +1,38 @@
-# Edukasyon::Style
+# Edukasyon Style
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/edukasyon/style`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Our internal Ruby code style configurations, enforced by Rubocop.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'edukasyon-style'
+group :development do
+  gem "edukasyon-style"
+end
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install edukasyon-style
-
 ## Usage
 
-TODO: Write usage instructions here
+Create a `.rubocop.yml` with the following directives:
 
-## Development
+```yaml
+inherit_gem:
+  edukasyon-style:
+    - default.yml
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+There's no need to add the `rubocop` gem to your project's `Gemfile`; `rubocop`
+is a dependency of `edukasyon-style`, to ensure we use a consistent minimum
+version across all of our projects.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Credits
 
-## Contributing
+We are heavily influenced by:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/edukasyon-style.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+[Shopify Ruby Style Guide](http://shopify.github.io/ruby-style-guide/)
+[Rubocop](https://github.com/rubocop-hq/ruby-style-guide#crlf)
