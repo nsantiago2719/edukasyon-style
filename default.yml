@@ -72,11 +72,11 @@ Style/CommentAnnotation:
 Style/Encoding:
   Description: Use UTF-8 as the source file encoding.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#utf-8
-  Enabled: false
+  Enabled: true
 Naming/FileName:
   Description: Use snake_case for source file names.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#snake-case-files
-  Enabled: false
+  Enabled: true
   Exclude: []
 Style/FrozenStringLiteralComment:
   Description: >-
@@ -108,7 +108,7 @@ Style/GlobalVars:
 Style/GuardClause:
   Description: Check for conditionals that can be replaced with guard clauses
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-nested-conditionals
-  Enabled: false
+  Enabled: true
   MinBodyLength: 1
 Style/HashSyntax:
   Description: 'Prefer Ruby 1.9 hash syntax { a: 1, b: 2 } over 1.8 syntax { :a =>
@@ -122,7 +122,7 @@ Style/HashSyntax:
 Style/IfUnlessModifier:
   Description: Favor modifier if/unless usage when you have a single-line body.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#if-as-a-modifier
-  Enabled: false
+  Enabled: true
 Style/LambdaCall:
   Description: Use lambda.call(...) instead of lambda.(...).
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#proc-call
@@ -176,7 +176,7 @@ Style/ParenthesesAroundCondition:
 Style/PercentLiteralDelimiters:
   Description: Use `%`-literal delimiters consistently
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-literal-braces
-  Enabled: false
+  Enabled: true
   PreferredDelimiters:
     "%": "()"
     "%i": "()"
@@ -257,7 +257,7 @@ Style/StringLiterals:
   Description: Checks if uses of quotes match the configured preference.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-string-literals
   Enabled: true
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
   SupportedStyles:
   - single_quotes
   - double_quotes
@@ -311,7 +311,7 @@ Style/TrailingCommaInHashLiteral:
 Style/TrivialAccessors:
   Description: Prefer attr_* methods to trivial readers/writers.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#attr_family
-  Enabled: false
+  Enabled: true
   ExactNameMatch: false
   AllowPredicates: false
   AllowDSLWriters: false
@@ -348,7 +348,7 @@ Style/WhileUntilModifier:
 Style/WordArray:
   Description: Use %w or %W for arrays of words.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-w
-  Enabled: false
+  Enabled: true
   MinSize: 0
   WordRegex: !ruby/regexp /\A[\p{Word}]+\z/
 Metrics/AbcSize:
@@ -372,13 +372,13 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Description: A complexity metric that is strongly correlated to the number of test
     cases needed to validate a method.
-  Enabled: true
+  Enabled: false
   Max: 6
 Metrics/LineLength:
-  Description: Limit lines to 80 characters.
+  Description: Limit lines to 120 characters.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
   Enabled: true
-  Max: 80
+  Max: 120
   AllowURI: true
   URISchemes:
   - http
@@ -432,7 +432,7 @@ Rails/ActionFilter:
   - app/controllers/**/*.rb
 Rails/HasAndBelongsToMany:
   Description: Prefer has_many :through to has_and_belongs_to_many.
-  Enabled: true
+  Enabled: false
   Include:
   - app/models/**/*.rb
 Rails/HttpPositionalArguments:
@@ -473,15 +473,15 @@ Style/SymbolArray:
   Enabled: false
 Naming/AccessorMethodName:
   Description: Check the naming of accessor methods for get_/set_.
-  Enabled: false
+  Enabled: true
 Style/Alias:
   Description: Use alias_method instead of alias.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#alias-method
-  Enabled: false
+  Enabled: true
 Style/ArrayJoin:
   Description: Use Array#join instead of Array#*.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#array-join
-  Enabled: false
+  Enabled: true
 Style/AsciiComments:
   Description: Use only ascii symbols in comments.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#english-comments
@@ -603,7 +603,7 @@ Style/MultilineTernaryOperator:
 Style/NegatedIf:
   Description: Favor unless over if for negative conditions (or control flow or).
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#unless-for-negatives
-  Enabled: false
+  Enabled: true
 Style/NegatedWhile:
   Description: Favor until over while for negative conditions.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#until-for-negatives
@@ -615,11 +615,11 @@ Style/NestedTernaryOperator:
 Style/NilComparison:
   Description: Prefer x.nil? to x == nil.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#predicate-methods
-  Enabled: false
+  Enabled: true
 Style/Not:
   Description: Use ! instead of not.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#bang-not-not
-  Enabled: false
+  Enabled: true
 Style/OneLineConditional:
   Description: Favor the ternary operator(?:) over if/then/else/end constructs.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#ternary-operator
@@ -635,11 +635,11 @@ Style/PerlBackrefs:
 Style/PreferredHashMethods:
   Description: Checks for use of deprecated Hash methods.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#hash-key
-  Enabled: false
+  Enabled: true
 Style/Proc:
   Description: Use proc instead of Proc.new.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#proc
-  Enabled: false
+  Enabled: true
 Style/RedundantBegin:
   Description: Don't use begin blocks when they are not needed.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#begin-implicit
@@ -660,7 +660,7 @@ Style/SelfAssignment:
   Description: Checks for places where self-assignment shorthand should have been
     used.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#self-assignment
-  Enabled: false
+  Enabled: true
 Style/SpecialGlobalVars:
   Description: Avoid Perl-style global variables.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-cryptic-perlisms
@@ -740,7 +740,7 @@ Layout/DotPosition:
   Description: Checks the position of the dot in multi-line method calls.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains
   Enabled: true
-  EnforcedStyle: trailing
+  EnforcedStyle: leading
   SupportedStyles:
   - leading
   - trailing
@@ -1083,7 +1083,7 @@ Lint/Void:
   Enabled: false
 Rails/Delegate:
   Description: Prefer delegate method for delegations.
-  Enabled: false
+  Enabled: true
 Security/Eval:
   Description: The use of eval represents a serious security risk.
   Enabled: true
@@ -1092,7 +1092,7 @@ Lint/AmbiguousBlockAssociation:
     - "spec/**/*"
 RSpec/LetSetup:
   Description: Using let! in configuration is not a bad thing if well structured
-  Enabled: false
+  Enabled: true
 RSpec/MultipleExpectations:
   Description: Multiple expectations in a spec are fine if used with caution
-  Enabled: false
+  Enabled: true
