@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    edukasyon-style (0.2.1)
+    edukasyon-style (0.2.2)
       rubocop (~> 0.58.2)
       rubocop-rspec (~> 1.24)
       thor

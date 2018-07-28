@@ -30,6 +30,18 @@ There's no need to add the `rubocop` gem to your project's `Gemfile`; `rubocop`
 is a dependency of `edukasyon-style`, to ensure we use a consistent minimum
 version across all of our projects.
 
+## Commands
+
+Running for the whole directory
+```
+bundle exec edukasyon_style
+```
+
+Running for the current changes versus develop
+```
+bundle exec edukasyon_style current
+```
+
 ## Credits
 
 We are heavily influenced by:
